@@ -27,9 +27,12 @@ These instructions assume you're already familiar with managing a RouterOS devic
    :if ( $bound ) do={ :delay 10s; /system/script run update-linode; }
    ```
 
+4. (optional) Setup a Scheduler to perform the update one minute past every hour:
+   ```routeros-script
+   /system/scheduler add name=update-linode interval=1h policy=read,write on-event=update-linode start-time=00:01:00
+   ```
 
-Alternatively, you may setup a Scheduler to run this script on an interval, if that is preferable for whatever reason.
-Done!  Now, whenever the DHCP client gets bound to a new lease, this script will run (after a short delay to ensure the route is up) and update your chosen host record with the IPv4 address of the lease.
+Done!  Now, whenever the DHCP client gets bound to a new lease, this script will run (after a short delay to ensure the route is up) and update your chosen host record with the IPv4 address of the lease.  The optional Scheduler acts as a backup, in case the update fails after the new address is bound.
 
 
 ## Configuration
