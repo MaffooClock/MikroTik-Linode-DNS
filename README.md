@@ -7,7 +7,7 @@ Each script is organized into its own directory with an accompanying README.
 
 ## Contents
 
-1. [DDNS-Linode](DDNS-Linode/) - For MikroTik routers with a dynamic public IPv4 address, to automatically update the IP address of an "A" record hosted on Linode's DNS service.
+1. [DDNS-Linode](DDNS-Linode/) - For MikroTik routers with a dynamic public IPv4 address, to automatically update the IP address of an "A" record hosted on the [Linode DNS service](https://www.linode.com/products/dns-manager/).
 
 2. [DHCP-to-DNS](DHCP-to-DNS/) - For MikroTik devices that host a DHCP service, automatically generate static DNS entries for each bound DHCP lease.  Intended primarily for private DNS servers wherein a forwarder zone is created that forwards requests to the DNS service running on the MikroTik device.
 
