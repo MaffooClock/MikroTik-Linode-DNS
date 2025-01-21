@@ -1,6 +1,6 @@
 ### update-linode.rsc
 # Use this in a scheduler, or better yet: in a DHCP Client "script" field:
-#     :if ( $bound ) do={ [:execute {/system/script run update-linode}] }
+#     :if ( $bound ) do={ :delay 10s; /system/script run update-linode; }
 
 ### Definitely change these:
 :local linodeToken  ""
