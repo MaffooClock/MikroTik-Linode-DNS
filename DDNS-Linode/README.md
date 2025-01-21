@@ -23,13 +23,13 @@ These instructions assume you're already familiar with managing a RouterOS devic
 2. Edit the script to set your own values for `linodeToken`, `domainId`, `recordId`, and `wanInterface` (see [Configuration](#configuration) section below for details).
 
 3. Modify the DHCP client attached to your WAN interface and set the following in the "script" field:
-   :if ( $bound ) do={ [:execute {/system/script run update-linode}] }
    ```routeros-script
+   :if ( $bound ) do={ :delay 10s; /system/script run update-linode; }
    ```
 
-Done!  Now, whenever the DHCP client gets bound to a new lease, this script will run and update your chosen host record with the IPv4 address of the lease.
 
 Alternatively, you may setup a Scheduler to run this script on an interval, if that is preferable for whatever reason.
+Done!  Now, whenever the DHCP client gets bound to a new lease, this script will run (after a short delay to ensure the route is up) and update your chosen host record with the IPv4 address of the lease.
 
 
 ## Configuration
