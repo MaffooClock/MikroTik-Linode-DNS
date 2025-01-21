@@ -138,7 +138,3 @@ If doing it by cURL also fails, then you know you've got something wrong with on
 
 5.  Linode imposes rate-limiting on API requests, which is currently 1,600 requests per minute -- for what this script does, that's an insanely high limit that we don't need to worry about.  For running this script over and over during troubleshooting, you shouldn't have a problem.  In production, though, if you choose to run this script on a schedule, you probably don't need any more frequent than once per hour.  I mean, you _technically_ could run it every second and not hit the rate limit, but why?
 
-
-### Getting Help
-
-If you're having trouble setting up this script and getting it to work, **do NOT open an issue** to ask for help.  The Issues feature is only for reporting bugs in the script itself, not asking for someone to troubleshoot your system for you.  Any issues opened for "iT's NoT wOrKiNg" without either pointing out a specific problem in the script, or at least attempting to explain why the script is at fault and not some other issue on your own system, will be closed outright without regard.
