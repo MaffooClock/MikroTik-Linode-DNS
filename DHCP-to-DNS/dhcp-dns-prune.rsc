@@ -6,7 +6,7 @@
 #
 # This is intended to be run on a schedule, once per day should be optimal.
 #
-# See: https://github.com/MaffooClock/MikroTik-Scripts/DHCP-to-DNS
+# See: https://github.com/MaffooClock/MikroTik-Scripts/blob/main/DHCP-to-DNS
 #
 
 ####################################################################################################

@@ -3,7 +3,7 @@
 # This script will scan all DHCP leases with a "bound" status and create
 # a static DNS entry pointing to the IP address on that lease.
 #
-# See: https://github.com/MaffooClock/MikroTik-Scripts/DHCP-to-DNS
+# See: https://github.com/MaffooClock/MikroTik-Scripts/blob/main/DHCP-to-DNS
 #
 
 

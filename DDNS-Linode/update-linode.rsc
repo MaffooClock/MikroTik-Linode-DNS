@@ -6,7 +6,7 @@
 # Use this in a DHCP Client "script" field:
 #     :if ( $bound ) do={ :delay 10s; /system/script run update-linode; }
 #
-# See: https://github.com/MaffooClock/MikroTik-Scripts/DDNS-Linode
+# See: https://github.com/MaffooClock/MikroTik-Scripts/blob/main/DDNS-Linode
 #
 
 ### Definitely change these:
