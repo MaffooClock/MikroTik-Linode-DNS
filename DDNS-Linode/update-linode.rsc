@@ -57,7 +57,7 @@
     :onerror fetchError in={
 
       :log info "Linode: sending update for domain ID $domainId and record ID $recordId"
-      :local result [/tool fetch url="$recordURL" http-header-field="$headers" http-data=$payload http-method=put as-value output=user]
+      :local result [/tool fetch url=$recordURL http-header-field=$headers http-data=$payload http-method=put as-value output=user]
 
       # Only update the previous address if the update request succeeded
       :if ( $result->"status" = "finished" ) do={
