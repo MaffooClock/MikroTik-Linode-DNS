@@ -46,7 +46,7 @@
      } 
   }
 
-  :if ( $linodeCurrentIP != $linodeLastIP ) do={
+  :if ( [:toip $linodeCurrentIP] != [:toip $linodeLastIP] ) do={
 
     :log info "Linode: new address detected"
 
