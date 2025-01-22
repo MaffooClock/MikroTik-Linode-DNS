@@ -16,7 +16,7 @@ Each script is organized into its own directory with an accompanying README.
 
 ## Help & Support
 
-You may [file an issue](issues/) ONLY if you are reporting a bug or sharing an improvement; *do not* open an issue to ask for help with deployment, modifications, or troubleshooting your own system.  Any issues opened for "\~iT's NoT wOrKiNg\~" will be closed outright without regard, unless you can point out a specific problem in the script, or at least make an attempt to explain why the script is at fault and not some other issue on your own system.
+You may [file an issue](../../issues) ONLY if you are reporting a bug or sharing an improvement; *do not* open an issue to ask for help with deployment, modifications, or troubleshooting your own system.  Any issues opened for "\~iT's NoT wOrKiNg\~" will be closed outright without regard, unless you can point out a specific problem in the script, or at least make an attempt to explain why the script is at fault and not some other issue on your own system.
 
 > [!NOTE]  
 > These scripts are provided as-is, and I will not be liable for any problems that arise from your use of these scripts.  It is your responsibility to 1) ensure you understand how a script works before deploying it on a live system, and 2) be prepared to handle the aftermath of your own negligence.
