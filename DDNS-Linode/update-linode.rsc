@@ -1,6 +1,13 @@
 ### update-linode.rsc
-# Use this in a scheduler, or better yet: in a DHCP Client "script" field:
+#
+# This script will update a A record in Linode DNS, via their API, with the dynamic IPv4 address
+# obtained via DHCP on a specified WAN interface
+#
+# Use this in a DHCP Client "script" field:
 #     :if ( $bound ) do={ :delay 10s; /system/script run update-linode; }
+#
+# See: https://github.com/MaffooClock/MikroTik-Scripts/DDNS-Linode
+#
 
 ### Definitely change these:
 :local linodeToken  ""
