@@ -18,7 +18,7 @@ These instructions assume you're already familiar with managing a RouterOS devic
 
 1. Create a new script:
    - name it anything you want, but for this example we'll assume you named it `update-linode`
-   - the only policies required are `read`, `write`, and `test`
+   - the minimum policies required are `read`, `write`, `policy`, and `test`
 
 2. Edit the script to set your own values for `linodeToken`, `domainId`, `recordId`, and `wanInterface` (see [Configuration](#configuration) section below for details).
 
@@ -29,7 +29,7 @@ These instructions assume you're already familiar with managing a RouterOS devic
 
 4. (optional) Setup a Scheduler to perform the update one minute past every hour:
    ```routeros-script
-   /system/scheduler add name=update-linode interval=1h policy=read,write on-event=update-linode start-time=00:01:00
+   /system/scheduler add name=update-linode interval=1h policy=read,write,policy,test on-event=update-linode start-time=00:01:00
    ```
 
 Done!  Now, whenever the DHCP client gets bound to a new lease, this script will run (after a short delay to ensure the route is up) and update your chosen host record with the IPv4 address of the lease.  The optional Scheduler acts as a backup, in case the update fails after the new address is bound.
