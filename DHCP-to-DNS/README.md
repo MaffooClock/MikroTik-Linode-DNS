@@ -45,13 +45,19 @@ When the script runs, it will select a collection of DHCP leases which have a "b
 3. Check that the hostname contains only valid characters (per [RFC 1035 § 2.3.1](https://datatracker.ietf.org/doc/html/rfc1035#section-2.3.1)).  Invalid characters will be replaced with a hyphen.  Leading and trailing hyphens will be removed.
 
 4. Check existing static DNS entries that might already exist for this host, as referenced by the MAC address stored in the comments field:
+
    a. If exactly one entry is found and the IP address doesn't match, it will be updated
+
    b. If exactly one entry is found and the hostname doesn't match, it will be deleted[^1], and 4d (below) will apply
+
    c. If more than one entry is found (which should never happen), all of them are deleted and 4d (below) will apply
+
    d. If no entries are found, then one will be created
 
 5. Before creating a new static DNS entry, the proposed FQDN will be used as a search on existing entries:
+
    a. If that search yields no results, then the static entry is created as-is
+
    b. Otherwise, an integer will be appended to the hostname portion of the FQDN, and the search will repeat.  Each time this step repeats, the integer is incremented until the search returns no results.
 
 [^1]: **Why delete and re-create an entry when the hostname changes?**  Because if the new hostname already exists for another static entry, RouterOS will fail to update the entry.  Thus, re-creating it, we benefit from the duplicate name mitigation offered by the creation logic.
